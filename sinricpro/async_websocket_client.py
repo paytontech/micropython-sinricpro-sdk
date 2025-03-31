@@ -113,7 +113,7 @@ class AsyncWebsocketClient:
         self.sock.connect(addr)
         self.sock.setblocking(False)
         if self.uri.protocol == 'wss':
-            self.sock = ussl.wrap_socket(self.sock)
+            self.sock = ssl.wrap_socket(self.sock)
         # await self.open(False)
 
         def send_header(header, *args):
